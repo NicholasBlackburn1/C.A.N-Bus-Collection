@@ -5,6 +5,7 @@ this class is for  the main code uwU
 import utils.ConsoleLog as logger
 import zmq
 import const 
+from collection import canCollection
 
 
 context = zmq.Context(io_threads=4)
@@ -19,4 +20,10 @@ def main():
 
     logger.PipeLine_Ok("Started zmq Successfully!")
     logger.Warning("starting Canbus Data Collection Module.....")
+
+    #* confirgures canbus 
+    canCollection.canData.configureCanBus(canCollection.canData())
+
+    #* runs the canbus code
+    canCollection.canData.runDataCollection(canCollection.canData())
 
