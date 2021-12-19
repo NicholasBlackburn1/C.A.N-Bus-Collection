@@ -30,7 +30,16 @@ class canData(object):
                 const.heartbeat += 1
                 logging.Warning("hartbeet:"+str(const.heartbeat ))
             else:
+                # Formats the data into the correct ids ie:(0x123) format 
                 self.ID = '0x{0:0{1}X}'.format(msg.arbitration_id, 8 if msg.is_extended_id else 3)
                 self.DATA = (binascii.hexlify(msg.data))
+
+            #Saves all files and exiteds program
+            if(const.heartbeat == 10):
+                logging.Error("WATCHDOG OVER RUN QUITTING PROGRAM...")
+                
+                logging.Error("good by Program is Ready to die")
+                const.CAN0.shutdown()
+                break
 
 
