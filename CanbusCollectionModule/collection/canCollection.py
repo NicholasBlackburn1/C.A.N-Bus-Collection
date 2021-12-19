@@ -20,7 +20,7 @@ class canData(object):
         logging.PipeLine_Ok("Configured Canbus Succesfully...")
 
     #* allows me to grab data from the can bus 
-    def grabData(self):
+    def runDataCollection(self):
         
         while True:
             msg = const.CAN0.recv(timeout=0.5)
@@ -41,5 +41,8 @@ class canData(object):
                 logging.Error("good by Program is Ready to die")
                 const.CAN0.shutdown()
                 break
+    
+
+
 
 
