@@ -5,7 +5,7 @@ description = "A module for reading and passing canbus data to zmq"
 authors = ["NicholasBlackburn1 <nickblackburn02@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8"
 zmq = "^0.0.0"
 matplotlib = "^3.5.1"
 numpy = "^1.21.4"
